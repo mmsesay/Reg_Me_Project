@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from fbc_app import urls
+from . import views
+from fbc_app import urls
 
 urlpatterns = [
+    path('', views.indexView.as_view(), name='main'),
     path('admin/', admin.site.urls),
-    # path('fbc/', include('fbc_app.urls'))
+    path('fbc/', include('fbc_app.urls', namespace='fbc_app'))
 ]

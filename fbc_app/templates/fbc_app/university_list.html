@@ -1,0 +1,17 @@
+{% extends 'fbc_app/base.html' %}
+
+{% block content %}
+    <h2>Welcome to the list of all the schools</h2>
+
+    <ol>
+        {% for university in universities %}
+            <h4>
+                <li>
+                    <a href="{% url 'fbc_app:fbc_detail' university.id %}">
+                        {{ university.name }}
+                    </a>
+                </li>
+            </h4>
+        {% endfor %}
+    </ol>
+{% endblock %}

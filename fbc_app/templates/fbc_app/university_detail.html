@@ -1,0 +1,19 @@
+{% extends 'fbc_app/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h3>Welcome to the school university page</h3>
+    <h4>University detail</h4>
+    <p>Name: {{ university_details.name }}</p>
+    <p>Chancellor: {{ university_details.chancellor }}</p>
+    <p>Location: {{ university_details.location }}</p>
+
+    <h3>Courses</h3>
+    {% for course in university_details.courses.all %}
+        <p>{{ course.title }}</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
