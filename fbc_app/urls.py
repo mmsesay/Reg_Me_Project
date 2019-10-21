@@ -9,7 +9,7 @@ app_name = 'fbc_app'
 urlpatterns = [
     path('', views.UnveristyListView.as_view(), name='fbc_home'),
     path('university/<slug:pk>/', views.UniversityDetailView.as_view(), name="fbc_detail"),
-    path('university/create/', views.UniversityCreateView.as_view(), name='fbc_create'),
-    path('university/update/', views.UniversityUpdateView.as_view(), name='fbc_update'),
-    path('university/delete/', views.UniversityDeleteView.as_view(), name='fbc_delete'),
+    path('create/', views.UniversityCreateView.as_view(), name='fbc_create'),
+    path('update/<slug:pk>/', views.UniversityUpdateView.as_view(), name='fbc_update'),
+    path('delete/<slug:pk>/', views.UniversityDeleteView.as_view(), name='fbc_delete'),
 ]

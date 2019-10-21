@@ -1,0 +1,12 @@
+{% extends "fbc_app/base.html" %}
+
+{% block content %}
+    <h3>Are you sure you want to delete {{ university.name }} </h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a class="btn btn-primary" href="{% url 'fbc_app:fbc_detail' university.id %}">Cancel</a>
+    </form>
+
+{% endblock %}

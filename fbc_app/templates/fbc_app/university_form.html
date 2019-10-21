@@ -1,0 +1,20 @@
+{% extends 'fbc_app/base.html' %}
+
+{% block content %}
+    <h3>
+        <span>Please fill in the form</span>
+
+        {% if not form.instance.pk %}
+        Create University
+        {% else %}
+        Update
+        {% endif %}
+    </h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Create">
+    </form>
+    
+{% endblock %}

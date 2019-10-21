@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # university class
 class University(models.Model):
@@ -8,6 +9,10 @@ class University(models.Model):
 
     def __str__(self):
         return self.name
+
+    # resolve url redirection
+    def get_absolute_url(self):
+        return reverse("fbc_app:fbc_detail",kwargs={'pk':self.pk})
 
 # course class
 class Course(models.Model):
